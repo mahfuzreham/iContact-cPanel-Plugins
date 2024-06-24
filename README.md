@@ -1,25 +1,23 @@
 # iContact-cPanel-Plugins
 Extra "Contact Manager" Providers for cPanel and WHM
 
-Current plugins:
-================
-* XMPP  -- Stable XMPP provider (well, as stable as Net::XMPP is, anyways). See issue #2
-* IRC   -- New provider, needs more testing by users out in the wild. "Works for Me"
-* Slack -- Works presuming you have an incoming WebHook URL, much like CpanelRicky's MatterMost plugin.
-* Discord -- Similar to Slack, use an incoming WebHook URL.
-* Telegram -- Works, though getting the right numeric ID for the user/group you want to message may be tricky. An instructional video has been posted [here](https://www.youtube.com/watch?v=vnCFlu2KzhI&feature=youtu.be) to assist you with getting this all setup.
-
-If you like this plugin, consider sending a a few dollars this way:
-https://paypal.me/troglodyne
-
 Installation and Use:
 ---------------------
-* Clone this repo with git onto a cPanel host of at least 11.64+.
-* After changing the current working directory of your terminal session into the repo's directory, run `make` if you want to install all the providers.
+* Clone this repo with git onto a cPanel host of at least
+Git clone  https://github.com/mahfuzreham/iContact-cPanel-Plugin
+cd iContact cPanel Plugin
+make test
+After Done now you can run the command 
 
+make install install-discord 
+
+
+noted if faced issue: 
+XMPP : cpan -i -f Net::XMPP
+telegram : cpan -i -f www: : Telegram: :BotAPI   
 OR
 
-* If you want to only install one specific provider, run 'make install-$provider' -- example: `make install-slack` would install Slack's provider.
+* If you want only to install one specific provider, run 'make install-$provider' -- example: `make install-slack` would install Slack's provider.
 * (Optionally) Run the Tests with `make test`
 * Go to WHM >> Basic Setup and configure the provider options
 * Go to WHM >> Contact Manager and make sure it is set up to spam you mercilessly (and for the notifications you care about!).
